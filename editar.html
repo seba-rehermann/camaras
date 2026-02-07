@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Editar Paciente</title>
+</head>
+<body class="container py-4">
+    <h6>Editando Registro (Formato 24h)</h6>
+    <form action="/actualizar/{{ p.id }}" method="POST" class="row g-2 p-3 border rounded shadow-sm">
+        <div class="col-md-2"><label>Llegada</label><input type="time" name="hora_llegada" class="form-control" value="{{ p.hora_llegada }}"></div>
+        <div class="col-md-4"><label>Nombre</label><input type="text" name="nombre" class="form-control" value="{{ p.nombre }}"></div>
+        <div class="col-md-3">
+            <label>Procedencia</label>
+            <input list="opciones-procedencia" name="procedencia" class="form-control" value="{{ p.procedencia }}">
+            <datalist id="opciones-procedencia"><option value="INT"><option value="AMB"></datalist>
+        </div>
+        <div class="col-md-3"><label>Estudio</label><input type="text" name="estudio" class="form-control" value="{{ p.estudio }}"></div>
+        <div class="col-md-2"><label>Inyección</label><input type="time" name="hora_inyeccion" class="form-control" value="{{ p.hora_inyeccion }}"></div>
+        <div class="col-md-2"><label>Cámara</label><input type="text" name="camara" class="form-control" value="{{ p.camara }}"></div>
+        <div class="col-md-2"><label>Entrada</label><input type="time" name="hora_entrada" class="form-control" value="{{ p.hora_entrada }}"></div>
+        <div class="col-md-2"><label>Salida</label><input type="time" name="hora_salida" class="form-control" value="{{ p.hora_salida }}"></div>
+        <div class="col-12 text-end mt-3">
+            <a href="/" class="btn btn-sm btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-sm btn-primary">Guardar Cambios</button>
+        </div>
+    </form>
+</body>
+</html>
